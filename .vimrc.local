@@ -1,0 +1,109 @@
+" GVIM- (here instead of .gvimrc)
+if has('gui_running')
+    if has("gui_gtk2")
+        " Set GUI Font
+        set guifont=Inconsolata\ for\ Powerline\ 9,Menlo\ Regular\ 9,Consolas\ Regular\ 9,Courier\ New\ Regular\ 9
+    elseif has('gui_macvim')
+        " Set GUI Font
+        set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11,Menlo\ Regular:h11,Consolas\ Regular:h11,Courier\ New\ Regular:h11
+    elseif has('gui_vimr')
+        " Set GUI Font
+        set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11,Menlo\ Regular:h11,Consolas\ Regular:h11,Courier\ New\ Regular:h11
+    endif
+    if has('gui_macvim')
+        set transparency=0      " Make the window slightly transparent
+    endif
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" My Numbers settings
+let g:enable_numbers = 0
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
+
+"Markdown to HTML
+nmap <leader>md :%!/usr/local/Cellar/markdown/1.0.1/bin/markdown --html4tags<CR>
+" maps \c to ^__ for commenting
+map <leader>c <C-_><C-_>
+" maps space to prompt
+map <space> :
+" map double space to command-line prompt
+map <space><space> :!
+" map F7 to reindent lines
+map <F7> mzgg=G`z<CR>
+" map leader p to color picker
+map <leader>p :PickHEX<CR>
+" Moving lines
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Set word wrap
+map <leader>w :set wrap linebreak nolist<CR>
+map <leader><leader>w :set nowrap<CR>
+
+" Remove Bundles
+UnBundle "Lokaltog/powerline"
+UnBundle "Shougo/neocomplcache.vim"
+
+" GitGutter issue
+let g:gitgutter_realtime = 0
+
+" Always show statusline
+set laststatus=2
+
+" Airline settings
+let g:airline_powerline_fonts=1
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline#extensions#branch#symbol = ' '
+let g:airline#extensions#readonly#symbol = ''
+let g:airline_linecolumn_prefix = ' '
+
+" vim.go confige
+let g:go_disable_autoinstall = 1
+
+" neosnippet keymap" Plugin key-mappings.
+imap <C-c>     <Plug>(neosnippet_expand_or_jump)
+smap <C-c>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-c>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+" let NERDTreeQuitOnOpen = 0
+
+" auto save
+:au FocusLost * silent! wa
+:set autowriteall
+
+" geeknote
+noremap <F8> :Geeknote<cr>
+let g:GeeknoteFormat="markdown"
+
+" stop visual paste from replacing register
+vnoremap p "_dP
+
+" Automatically load file changes
+source ~/.vim/bundle/watchforchanges/watchforchanges.vim
+let autoreadargs={'autoread':1}
+execute WatchForChanges("*", autoreadargs)
