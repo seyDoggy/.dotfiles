@@ -10,7 +10,7 @@ dir="$HOME/.dotfiles"
 olddir="$HOME/.dotfiles_old"
 # list of files/folders to symlink in homedir
 files=".bashrc
-.vimrc.bundle.local
+.vimrc.bundles.local
 .vimrc.local
 .zshrc"
 
