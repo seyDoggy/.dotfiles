@@ -102,4 +102,6 @@ for file in $files; do
 done
 
 # install bundles
+cd $HOME/.spf13-vim-3
+git pull
 vim +BundleInstall! +BundleClean +qa!
