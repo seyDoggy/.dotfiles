@@ -1,3 +1,7 @@
+" Remove Bundles
+UnBundle "Lokaltog/powerline"
+UnBundle "Shougo/neocomplcache.vim"
+
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
     if has("gui_gtk2")
@@ -47,10 +51,6 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 map <leader>w :set wrap linebreak nolist<CR>
 map <leader><leader>w :set nowrap<CR>
 
-" Remove Bundles
-UnBundle "Lokaltog/powerline"
-UnBundle "Shougo/neocomplcache.vim"
-
 " GitGutter issue
 let g:gitgutter_realtime = 0
 
@@ -89,6 +89,9 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+" set tab to trigger emmet-vim expansion
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " let NERDTreeQuitOnOpen = 0
 
