@@ -54,26 +54,6 @@ if [ ! -d "$HOME/.spf13-vim-3" ]; then
     curl http://j.mp/spf13-vim3 -L -o - | sh
 fi
 
-echo "###################################"
-echo "install watchforchanges vim script"
-# if dir exists and is not a symlink
-if [ -d "$HOME/.vim/bundle/watchforchanges" ]; then
-    if [ ! -h "$HOME/.vim/bundle/watchforchanges" ]; then
-        echo "$HOME/.vim/bundle/watchforchanges is not a symlink... moving to $olddir"
-        mv $HOME/.vim/bundle/watchforchanges $HOME/.dotfiles_old/
-    else # remove symlink
-        echo "$HOME/.vim/bundle/watchforchanges is a symlink... removing."
-        rm -rf $HOME/.vim/bundle/watchforchanges
-    fi
-fi
-
-ln -s $dir/watchforchanges $HOME/.vim/bundle/watchforchanges
-if [ -h $HOME/.vim/bundle/watchforchanges ]; then
-    echo "symlink to $HOME/.vim/bundle/watchforchanges created."
-else
-    echo "Could not create symlink to $HOME/.vim/bundle/watchforchanges"
-fi
-
 # create symlinks 
 for file in $files; do
     echo "###################################"

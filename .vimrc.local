@@ -1,6 +1,5 @@
 " Remove Bundles
 UnBundle "Lokaltog/powerline"
-UnBundle "Shougo/neocomplcache.vim"
 
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
@@ -107,6 +106,6 @@ let g:GeeknoteFormat="markdown"
 vnoremap p "_dP
 
 " Automatically load file changes
-source ~/.vim/bundle/watchforchanges/watchforchanges.vim
+source ~/.vim/bundle/vim-watchforchanges/plugin/watchforchanges.vim
 let autoreadargs={'autoread':1}
 execute WatchForChanges("*", autoreadargs)
