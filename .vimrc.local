@@ -1,25 +1,39 @@
 " Remove Bundles
 UnBundle "Lokaltog/powerline"
+UnBundle "terryma/vim-multiple-cursors"
 
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
+    " auto save
+    :au FocusLost * silent! wa
+    :set autowriteall
+
     if has("gui_gtk2")
         " Set GUI Font
         set guifont=Inconsolata\ for\ Powerline\ 9,Menlo\ Regular\ 9,Consolas\ Regular\ 9,Courier\ New\ Regular\ 9
     elseif has('gui_macvim')
         " Set GUI Font
         set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11,Menlo\ Regular:h11,Consolas\ Regular:h11,Courier\ New\ Regular:h11
+        " Make the window slightly transparent
+        set transparency=0
     elseif has('gui_vimr')
         " Set GUI Font
         set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11,Menlo\ Regular:h11,Consolas\ Regular:h11,Courier\ New\ Regular:h11
     endif
-    if has('gui_macvim')
-        set transparency=0      " Make the window slightly transparent
-    endif
 else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    " Automatically load file changes
+    source ~/.vim/bundle/vim-watchforchanges/plugin/watchforchanges.vim
+    let autoreadargs={'autoread':1}
+    execute WatchForChanges("*", autoreadargs)
 endif
+
+" remap escape key
+inoremap ii <Esc>
+
+" map oo to add new line
+nnoremap <C-o> o<Esc>
 
 " My Numbers settings
 let g:enable_numbers = 0
@@ -47,8 +61,8 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Set word wrap
-map <leader>w :set wrap linebreak nolist<CR>
-map <leader><leader>w :set nowrap<CR>
+map <leader>r :set wrap linebreak nolist<CR>
+map <leader><leader>r :set nowrap<CR>
 
 " GitGutter issue
 let g:gitgutter_realtime = 0
@@ -68,8 +82,19 @@ let g:airline#extensions#branch#symbol = ' '
 let g:airline#extensions#readonly#symbol = ''
 let g:airline_linecolumn_prefix = ' '
 
-" vim.go confige
-let g:go_disable_autoinstall = 1
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
 
 " neosnippet keymap" Plugin key-mappings.
 imap <C-c>     <Plug>(neosnippet_expand_or_jump)
@@ -94,10 +119,6 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " let NERDTreeQuitOnOpen = 0
 
-" auto save
-:au FocusLost * silent! wa
-:set autowriteall
-
 " geeknote
 noremap <F8> :Geeknote<cr>
 let g:GeeknoteFormat="markdown"
@@ -105,7 +126,3 @@ let g:GeeknoteFormat="markdown"
 " stop visual paste from replacing register
 vnoremap p "_dP
 
-" Automatically load file changes
-source ~/.vim/bundle/vim-watchforchanges/plugin/watchforchanges.vim
-let autoreadargs={'autoread':1}
-execute WatchForChanges("*", autoreadargs)
