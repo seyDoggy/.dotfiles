@@ -1,4 +1,3 @@
-Plugin 'Shougo/neocomplete.vim'
 Plugin 'vim-scripts/PickAColor.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'miripiruni/CSScomb-for-Vim.git'
@@ -8,4 +7,4 @@ Plugin 'AndrewRadev/linediff.vim'
 Plugin 'neilagabriel/vim-geeknote'
 Plugin 'walm/jshint.vim'
 Plugin 'seyDoggy/vim-watchforchanges'
-Plugin 'kristijanhusak/vim-multiple-cursors', {'name': 'multiple-cursors'}
+" Plugin 'mohitleo9/vim-fidget'
