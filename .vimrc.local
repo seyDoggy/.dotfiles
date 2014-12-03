@@ -145,3 +145,11 @@ let g:GeeknoteFormat="markdown"
 " stop visual paste from replacing register
 vnoremap p "_dP
 
+" ctrlp ignore settings
+" unlet the original spf13-vim settings
+unlet g:ctrlp_custom_ignore
+unlet g:ctrlp_user_command
+" set my own custom ignore settings
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
