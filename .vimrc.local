@@ -136,7 +136,7 @@ function! Multiple_cursors_after()
   endif
 endfunction
 
-" let NERDTreeQuitOnOpen = 0
+let NERDTreeQuitOnOpen = 0
 
 " geeknote
 noremap <F8> :Geeknote<cr>
