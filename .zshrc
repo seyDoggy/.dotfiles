@@ -79,7 +79,8 @@ export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
  else
-   export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
+   #export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
+   export EDITOR='vim'
  fi
 
 alias vimr="open -a VimR"
