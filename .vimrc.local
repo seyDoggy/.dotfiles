@@ -29,9 +29,6 @@ else
     execute WatchForChanges("*", autoreadargs)
 endif
 
-" remap escape key
-inoremap ii <Esc>
-
 " map oo to add new line
 nnoremap <C-o> o<Esc>
 
