@@ -67,6 +67,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # PATH MAMP PHP
 export PATH="/Applications/MAMP/bin/php/php5.5.14/bin:$PATH"
 
+# PATH Android SDK
+export PATH="/Users/adam/Library/Android:$PATH"
+
 # NodeJS Path
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 
