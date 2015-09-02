@@ -13,7 +13,8 @@ files=".bashrc
 .vimrc.before.local
 .vimrc.bundles.local
 .vimrc.local
-.zshrc"
+.zshrc
+.tmux.conf"
 
 # create dotfiles_old in homedir
 echo "###################################"
