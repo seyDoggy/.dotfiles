@@ -70,23 +70,38 @@ export PATH="/Applications/MAMP/bin/php/php5.5.14/bin:$PATH"
 # PATH Android SDK
 export PATH="/Users/adam/Library/Android:$PATH"
 
+# tmuxifier Path
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+
+# composer path
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
 # NodeJS Path
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# Manpages Path
+export MANPATH="/usr/local/man:$MANPATH"
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   #export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
-   export EDITOR='vim'
- fi
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='vim'
+else
+    #export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
+    export EDITOR='vim'
+fi
 
+# init tmuxifier
+eval "$(tmuxifier init -)"
+
+# open in vimr
 alias vimr="open -a VimR"
+
+# open tmux as 256 colors
+alias tmux="TERM=screen-256color-bce tmux"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
