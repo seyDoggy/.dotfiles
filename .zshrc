@@ -76,12 +76,17 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 # composer path
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
+# latest git from homebrew
+export PATH="/usr/local/Cellar/git/2.5.2/bin:$PATH"
+
 # NodeJS Path
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 
 # Manpages Path
 export MANPATH="/usr/local/man:$MANPATH"
 
+# PATH Ruby 2.2.3 GEMS
+export PATH="$HOME/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -108,3 +113,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
