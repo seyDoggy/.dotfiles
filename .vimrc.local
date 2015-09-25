@@ -166,6 +166,12 @@ if has('mouse_sgr')
     set ttymouse=sgr
 endif
 
+" android sdk path for vim-android
+let g:android_sdk_path = '/Users/adam/Library/Android/sdk'
+
+" gradle path for vim-android
+let g:gradle_path = '/usr/local/bin/gradle'
+
 " fixing double escape issue:
 " https://github.com/Shougo/neocomplcache.vim/issues/350#issuecomment-105707520
 iunmap <Esc>
