@@ -108,6 +108,18 @@ alias vimr="open -a VimR"
 # open tmux as 256 colors
 alias tmux="TERM=screen-256color-bce tmux"
 
+# open v_3 tmuxifier layout
+alias v3="tmuxifier load-window v_3"
+
+# open h_3 tmuxifier layout
+alias h3="tmuxifier load-window h_3"
+
+# open v_4 tmuxifier layout
+alias v4="tmuxifier load-window v_4"
+
+# open h_4 tmuxifier layout
+alias h4="tmuxifier load-window h_4"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

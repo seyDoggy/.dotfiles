@@ -175,3 +175,6 @@ let g:gradle_path = '/usr/local/bin/gradle'
 " fixing double escape issue:
 " https://github.com/Shougo/neocomplcache.vim/issues/350#issuecomment-105707520
 iunmap <Esc>
+
+" map for markdown preview
+let vim_markdown_preview_hotkey='<Leader>m'
