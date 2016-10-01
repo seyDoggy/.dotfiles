@@ -34,7 +34,7 @@ echo "install seydoggy zsh theme"
 # if file exists and is not a symlink
 if [ -e "$HOME/.oh-my-zsh/themes/seydoggy.zsh-theme" ]; then
     if [ ! -h "$HOME/.oh-my-zsh/themes/seydoggy.zsh-theme" ]; then
-        mv $HOME/.oh-my-zsh/themes/seydoggy.zsh-theme $HOME/.dotfiles_old/
+        mv $HOME/.oh-my-zsh/themes/seydoggy.zsh-theme $olddir/
     else # remove symlink
         rm -rf $HOME/.oh-my-zsh/themes/seydoggy.zsh-theme
     fi
@@ -46,6 +46,11 @@ if [ -h $HOME/.oh-my-zsh/themes/seydoggy.zsh-theme ]; then
 else
     echo "Could not create symlink to $HOME/.oh-my-zsh/themes/seydoggy.zsh-theme"
 fi
+
+echo "###################################"
+echo "install tmuxifier and themes"
+git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
+cp $dir/tmuxifier_layouts/* $HOME/.tmuxifier/layouts/
 
 # install spf13-vim
 cd

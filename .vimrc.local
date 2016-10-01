@@ -1,6 +1,24 @@
 " Remove Bundles
 UnBundle "Lokaltog/powerline"
 UnBundle "terryma/vim-multiple-cursors"
+"""""""
+UnBundle 'easymotion/vim-easymotion'
+UnBundle 'tpope/vim-abolish.git'
+UnBundle 'osyo-manga/vim-over'
+UnBundle 'kana/vim-textobj-user'
+UnBundle 'kana/vim-textobj-indent'
+UnBundle 'gcmt/wildfire.vim'
+UnBundle 'mattn/webapi-vim'
+UnBundle 'mattn/gist-vim'
+UnBundle 'groenewege/vim-less'
+UnBundle 'briancollins/vim-jst'
+UnBundle 'kchmck/vim-coffee-script'
+UnBundle 'tpope/vim-haml'
+UnBundle 'rust-lang/rust.vim'
+UnBundle 'tpope/vim-cucumber'
+UnBundle 'cespare/vim-toml'
+UnBundle 'quentindecock/vim-cucumber-align-pipes'
+UnBundle 'saltstack/salt-vim'
 
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
@@ -8,9 +26,11 @@ if has('gui_running')
     :au FocusLost * silent! wa
     :set autowriteall
 
+    set guifont=Hack\ 11,Inconsolata\ for\ Powerline\ 11,Menlo\ Regular\ 11,Consolas\ Regular\ 11,Courier\ New\ Regular\ 11
+
     if has("gui_gtk2")
         " Set GUI Font
-        set guifont=Inconsolata\ for\ Powerline\ 9,Menlo\ Regular\ 9,Consolas\ Regular\ 9,Courier\ New\ Regular\ 9
+        set guifont=Hack\ 11,Inconsolata\ for\ Powerline\ 11,Menlo\ Regular\ 11,Consolas\ Regular\ 11,Courier\ New\ Regular\ 11
     elseif has('gui_macvim')
         " Set GUI Font
         set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11,Menlo\ Regular:h11,Consolas\ Regular:h11,Courier\ New\ Regular:h11
@@ -25,6 +45,12 @@ else
     source ~/.vim/bundle/vim-watchforchanges/plugin/watchforchanges.vim
     let autoreadargs={'autoread':1}
     execute WatchForChanges("*", autoreadargs)
+
+    " hack for highlight color in gnome-terminal
+    if !has("macunix")
+        let g:solarized_termcolors=16
+        color solarized
+    endif
 endif
 
 " map oo to add new line
@@ -35,25 +61,20 @@ let g:enable_numbers = 0
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
-"Markdown to HTML
-nmap <leader>md :%!/usr/local/Cellar/markdown/1.0.1/bin/markdown --html4tags<CR>
 " maps \c to ^__ for commenting
 map <leader>c <C-_><C-_>
+
 " maps space to prompt
 map <space> :
+
 " map double space to command-line prompt
 map <space><space> :!
+
 " map F7 to reindent lines
 map <F7> mzgg=G`z<CR>
+
 " map leader p to color picker
 map <leader>p :PickHEX<CR>
-" Moving lines
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Set word wrap
 map <leader>r :set wrap linebreak nolist<CR>
@@ -64,9 +85,6 @@ let g:gitgutter_realtime = 0
 
 " Always show statusline
 set laststatus=2
-
-" Airline settings
-let g:airline_powerline_fonts=1
 
 " powerline symbols
 let g:airline_left_sep = ''
@@ -117,25 +135,10 @@ smap <expr><TAB>
   \ emmet#isExpandable() ? emmet#expandAbbrIntelligent("\<tab>") :
   \ "\<TAB>"
 
-" Multiple Cursors - Called once right before you start selecting multiple cursors
-function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-    exe 'NeoCompleteLock'
-  endif
-endfunction
-
-" Multiple Cursors - Called once only when the multiple selection is canceled (default <Esc>)
-function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
-endfunction
-
-let NERDTreeQuitOnOpen = 1
-
-" geeknote
-noremap <F8> :Geeknote<cr>
-let g:GeeknoteFormat="markdown"
+" large screen
+let NERDTreeQuitOnOpen = 0
+" small screen
+"let NERDTreeQuitOnOpen = 1
 
 " stop visual paste from replacing register
 vnoremap p "_dP
@@ -143,10 +146,10 @@ vnoremap p "_dP
 " ctrlp ignore settings
 " unlet the original spf13-vim settings
 unlet g:ctrlp_custom_ignore
-unlet g:ctrlp_user_command
+"unlet g:ctrlp_user_command
 " set my own custom ignore settings
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$\|coverage$',
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
 " allow mouse reporting on large terminal sessions
@@ -155,15 +158,26 @@ if has('mouse_sgr')
     set ttymouse=sgr
 endif
 
-" android sdk path for vim-android
-let g:android_sdk_path = '/Users/adam/Library/Android/sdk'
-
-" gradle path for vim-android
-let g:gradle_path = '/usr/local/bin/gradle'
-
 " fixing double escape issue:
 " https://github.com/Shougo/neocomplcache.vim/issues/350#issuecomment-105707520
 "iunmap <Esc>
 
 " map for markdown preview
 let vim_markdown_preview_hotkey='<Leader>m'
+
+" set column at 80 char
+set colorcolumn=80
+
+" set scss to 2 spaces
+autocmd Filetype scss setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype css setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+" eslint
+let g:syntastic_javascript_eslint_exe = '/usr/bin/eslint'
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
+let g:jsdoc_additional_descriptions = 1
+let g:jsdoc_access_descriptions = 1
+let g:jsdoc_underscore_private = 1

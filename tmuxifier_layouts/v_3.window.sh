@@ -11,8 +11,9 @@ split_h 20
 split_v 33
 
 # Run commands.
-#run_cmd "htop" 1    # runs in active pane
-#run_cmd "date" 1  # runs in pane 1
+#run_cmd "vim ." 0	# runs in active pane
+#run_cmd "git log" 1 	# runs in pane 1
+#run_cmd "htop" 1  	# runs in pane 1
 
 # Paste text
 #send_keys "top"    # paste into active pane
