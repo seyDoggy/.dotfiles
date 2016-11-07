@@ -140,8 +140,15 @@ let NERDTreeQuitOnOpen = 0
 " small screen
 "let NERDTreeQuitOnOpen = 1
 
+" paste with indent and
 " stop visual paste from replacing register
-vnoremap p "_dP
+nnoremap p p=`]
+nnoremap P P=`]
+vnoremap p "_dp=`]
+vnoremap P "_dP=`]
+" paste normal
+nnoremap <leader><leader>p p
+nnoremap <leader><leader>P P
 
 " ctrlp ignore settings
 " unlet the original spf13-vim settings
