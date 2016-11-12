@@ -15,6 +15,17 @@ files=".vimrc.before.local
 .zshrc
 .tmux.conf"
 
+# Install Update
+echo "###################################"
+echo "Updating system..."
+sudo apt update
+sudo apt upgrade
+
+# Install tools
+echo "###################################"
+echo "Installing tools..."
+sudo apt install vim-gnome zsh tmux curl htop
+
 # create dotfiles_old in homedir
 echo "###################################"
 echo "Creating $olddir for backup of any existing dotfiles in $HOME"
@@ -91,3 +102,8 @@ done
 cd $HOME/.spf13-vim-3
 git pull
 vim +BundleInstall! +BundleClean +qa!
+
+# Install fonts
+echo "###################################"
+echo "Installing powerline fonts..."
+bash ~/.vim/bundle/fonts/install.sh
