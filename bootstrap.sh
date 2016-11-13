@@ -124,4 +124,4 @@ echo "###################################"
 echo "Installing gnome-terminal-colors-solarized"
 git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git ~/.gnome-terminal-colors-solarized
 cd ~/.gnome-terminal-colors-solarized
-./install.sh
+./set_dark.sh --skip-dircolors
