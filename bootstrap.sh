@@ -24,7 +24,7 @@ sudo apt upgrade
 # Install tools
 echo "###################################"
 echo "Installing tools..."
-sudo apt install vim-gnome zsh tmux curl htop
+sudo apt install vim-gnome zsh tmux curl htop dconf-cli
 
 # Add tools to allow PPA's
 echo "###################################"
@@ -118,3 +118,10 @@ vim +BundleInstall! +BundleClean +qa!
 echo "###################################"
 echo "Installing powerline fonts..."
 bash ~/.vim/bundle/fonts/install.sh
+
+# Install gnome-terminal-colors-solarized
+echo "###################################"
+echo "Installing gnome-terminal-colors-solarized"
+git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git ~/.gnome-terminal-colors-solarized
+cd ~/.gnome-terminal-colors-solarized
+./install.sh
