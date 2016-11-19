@@ -4,4 +4,4 @@ Plugin 'wincent/terminus'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'mhinz/vim-hugefile'
 Plugin 'heavenshell/vim-jsdoc'
-
+Plugin 'mustache/vim-mustache-handlebars'
