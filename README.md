@@ -2,7 +2,7 @@
 
 Move on, nothing to see here... unless you use `ls -a`... haha, I made a shell joke.
 
-I use this `bootstrap.sh` to get my environment up and running on Mac and Linux machines. Very handy when setting up new systems or spending a lot of time on a remote server. It's nice when everything feels like home.
+I use this `bootstrap.sh` to get my environment up and running on ~~Mac and~~ Linux machines. Very handy when setting up new systems or spending a lot of time on a remote server. It's nice when everything feels like home.
 
 Basic assumptions are that you use `zsh` and have it installed, that you have `curl`, `git` and `vim` installed. If you don't like anything that has been done, you can find your old .dotfiles in .dotfiles-old.
 
