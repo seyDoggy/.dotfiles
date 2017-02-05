@@ -188,3 +188,8 @@ let g:jsdoc_input_description = 1
 let g:jsdoc_additional_descriptions = 1
 let g:jsdoc_access_descriptions = 1
 let g:jsdoc_underscore_private = 1
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
