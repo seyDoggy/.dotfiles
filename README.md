@@ -1,5 +1,7 @@
 # My .dotfiles
 
+***Mac specific branch is available at https://github.com/seyDoggy/.dotfiles/tree/mac***
+
 Move on, nothing to see here... unless you use `ls -a`... haha, I made a shell joke.
 
 I use this `bootstrap.sh` to get my environment up and running on ~~Mac and~~ Linux machines. Very handy when setting up new systems or spending a lot of time on a remote server. It's nice when everything feels like home.
