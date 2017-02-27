@@ -14,15 +14,12 @@ ZSH_THEME="seydoggy"
 source $ZSH/oh-my-zsh.sh
 
 # ALIAS
-alias vim="gvim -v"
-alias zshconfig="gvim -v ~/.zshrc"
+alias zshconfig="vim -v ~/.zshrc"
 alias tmux="TERM=screen-256color tmux"
 alias v3="tmuxifier load-window v_3"
 alias h3="tmuxifier load-window h_3"
 alias v4="tmuxifier load-window v_4"
 alias h4="tmuxifier load-window h_4"
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
 
 #PATH
 ## tmuxifier Path

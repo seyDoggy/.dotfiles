@@ -26,19 +26,16 @@ if has('gui_running')
     :au FocusLost * silent! wa
     :set autowriteall
 
-    set guifont=Hack\ 11,Inconsolata\ for\ Powerline\ 11,Menlo\ Regular\ 11,Consolas\ Regular\ 11,Courier\ New\ Regular\ 11
+    set guifont=Hack\ 11,Inconsolata\ for\ Powerline\ 11,Meslo\ Regular\ 11
 
     if has("gui_gtk2")
         " Set GUI Font
-        set guifont=Hack\ 11,Inconsolata\ for\ Powerline\ 11,Menlo\ Regular\ 11,Consolas\ Regular\ 11,Courier\ New\ Regular\ 11
+        set guifont=Hack\ 11,Inconsolata\ for\ Powerline\ 11,Meslo\ Regular\ 11
     elseif has('gui_macvim')
         " Set GUI Font
-        set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11,Menlo\ Regular:h11,Consolas\ Regular:h11,Courier\ New\ Regular:h11
+        set guifont=Hack\ 11,Inconsolata\ for\ Powerline\ 11,Meslo\ Regular\ 11
         " Make the window slightly transparent
         set transparency=0
-    elseif has('gui_vimr')
-        " Set GUI Font
-        set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11,Menlo\ Regular:h11,Consolas\ Regular:h11,Courier\ New\ Regular:h11
     endif
 else
     " Automatically load file changes
@@ -50,6 +47,13 @@ else
     if !has("macunix")
         let g:solarized_termcolors=16
         color solarized
+    else
+        set background=dark
+        " solarized options 
+        let g:solarized_termcolors=16
+        let g:solarized_visibility = "high"
+        let g:solarized_contrast = "high"
+        colorscheme solarized
     endif
 endif
 

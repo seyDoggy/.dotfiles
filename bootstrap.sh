@@ -15,27 +15,14 @@ files=".vimrc.before.local
 .zshrc
 .tmux.conf"
 
-# Install Update
-echo "###################################"
-echo "Updating system..."
-sudo apt update
-sudo apt upgrade
-
 # Install tools
 echo "###################################"
+echo "Installing Homebrew"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 echo "Installing tools..."
-sudo apt install vim-gnome zsh tmux curl htop dconf-cli
-
-# Add tools to allow PPA's
-echo "###################################"
-echo "Installing PPA tools..."
-sudo apt install software-properties-common python-software-properties
-
-# Add paper theme
-echo "###################################"
-echo "Adding paper theme"
-sudo add-apt-repository ppa:snwh/pulp && sudo apt update
-sudo apt install paper-icon-theme paper-gtk-theme paper-cursor-theme
+brew install mercurial vim tmux htop
+brew install macvim --override-system-vim
 
 # create dotfiles_old in homedir
 echo "###################################"
