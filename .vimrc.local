@@ -26,16 +26,19 @@ if has('gui_running')
     :au FocusLost * silent! wa
     :set autowriteall
 
-    set guifont=Hack\ 11,Inconsolata\ for\ Powerline\ 11,Meslo\ Regular\ 11
+    set guifont=Hack\ 11
+
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        " Set GUI Font
+        set guifont=Hack:h14
+        " Make the window slightly transparent
+        set transparency=0
+    endif
 
     if has("gui_gtk2")
         " Set GUI Font
-        set guifont=Hack\ 11,Inconsolata\ for\ Powerline\ 11,Meslo\ Regular\ 11
-    elseif has('gui_macvim')
-        " Set GUI Font
-        set guifont=Hack\ 11,Inconsolata\ for\ Powerline\ 11,Meslo\ Regular\ 11
-        " Make the window slightly transparent
-        set transparency=0
+        set guifont=Hack\ 14
     endif
 else
     " Automatically load file changes
