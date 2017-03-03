@@ -58,6 +58,9 @@ else
         let g:solarized_contrast = "high"
         colorscheme solarized
     endif
+
+    " for mac clipboard
+    set clipboard=unnamed
 endif
 
 " map oo to add new line
