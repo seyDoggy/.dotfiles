@@ -3,7 +3,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 COMPLETION_WAITING_DOTS="true"
-plugins=(git node npm web-search bower)
+plugins+=(git node npm web-search bower zsh-nvm)
 
 ## Set name of the theme to load.
 ## Look in ~/.oh-my-zsh/themes/
@@ -82,3 +82,8 @@ eval "$(tmuxifier init -)"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
