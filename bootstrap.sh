@@ -21,7 +21,7 @@ echo "Installing Homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "Installing tools..."
-brew install mercurial vim tmux htop reattach-to-user-namespace
+brew install mercurial vim tmux htop reattach-to-user-namespace rbenv
 brew install macvim --override-system-vim
 brew link --overwrite macvim
 
