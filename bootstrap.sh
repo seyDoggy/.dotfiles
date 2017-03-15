@@ -22,8 +22,18 @@ echo "Installing Homebrew"
 
 echo "Installing tools..."
 brew install mercurial vim tmux htop reattach-to-user-namespace rbenv
-brew install macvim --override-system-vim
+brew install macvim --override-system-vim --with-cscope --with-lua
 brew link --overwrite macvim
+
+#echo "Installing optional services..."
+#brew tap homebrew/services
+#brew install mysql
+
+# To run mysql:
+#brew services start mysql
+
+# To set mysql password:
+#mysqladmin -u root -p
 
 # create dotfiles_old in homedir
 echo "###################################"
