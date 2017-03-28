@@ -20,6 +20,7 @@ alias v3="tmuxifier load-window v_3"
 alias h3="tmuxifier load-window h_3"
 alias v4="tmuxifier load-window v_4"
 alias h4="tmuxifier load-window h_4"
+alias h6="tmuxifier load-window h_6"
 
 #PATH
 ## tmuxifier Path
