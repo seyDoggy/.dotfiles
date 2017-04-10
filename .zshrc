@@ -2,6 +2,9 @@
 ## Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+## Path to Eclipse
+export ECLIPSE_HOME=/Applications/STS.app/Contents/Eclipse
+
 COMPLETION_WAITING_DOTS="true"
 plugins+=(git node npm web-search bower zsh-nvm)
 
