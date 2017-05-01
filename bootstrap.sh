@@ -107,19 +107,12 @@ for file in $files; do
     fi
 done
 
-# install bundles
-cd $HOME/.spf13-vim-3
-git pull
-vim +BundleInstall! +BundleClean +qa!
-
 # Install fonts
 echo "###################################"
 echo "Installing powerline fonts..."
 bash ~/.vim/bundle/fonts/install.sh
 
-# Install gnome-terminal-colors-solarized
-echo "###################################"
-echo "Installing gnome-terminal-colors-solarized"
-git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git ~/.gnome-terminal-colors-solarized
-cd ~/.gnome-terminal-colors-solarized
-./set_dark.sh --skip-dircolors
+# install bundles
+cd $HOME/.spf13-vim-3
+git pull
+vim +BundleInstall! +BundleClean +qa!
