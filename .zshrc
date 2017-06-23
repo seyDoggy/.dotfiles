@@ -24,10 +24,13 @@ alias h3="tmuxifier load-window h_3"
 alias v4="tmuxifier load-window v_4"
 alias h4="tmuxifier load-window h_4"
 alias h6="tmuxifier load-window h_6"
+alias ide="tmuxifier load-window javaIDE"
 
 #PATH
-## tmuxifier Path
+# tmuxifier Path
 export PATH="$HOME/.tmuxifier/bin:$PATH"
+# tmuxifier layout Path
+export TMUXIFIER_LAYOUT_PATH="$HOME/.dotfiles/tmuxifier_layouts"
 
 # EDITOR
 export VISUAL=vim
