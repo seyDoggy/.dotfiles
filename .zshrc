@@ -21,12 +21,16 @@ alias v3="tmuxifier load-window v_3"
 alias h3="tmuxifier load-window h_3"
 alias v4="tmuxifier load-window v_4"
 alias h4="tmuxifier load-window h_4"
+alias h6="tmuxifier load-window h_6"
+alias ide="tmuxifier load-window javaIDE"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 #PATH
 ## tmuxifier Path
 export PATH="$HOME/.tmuxifier/bin:$PATH"
+# tmuxifier layout Path
+export TMUXIFIER_LAYOUT_PATH="$HOME/.dotfiles/tmuxifier_layouts"
 
 # EDITOR
 export VISUAL=vim
@@ -35,6 +39,10 @@ export EDITOR="$VISUAL"
 # init tmuxifier
 eval "$(tmuxifier init -)"
 
+# adb
+if [ -d "$HOME/Android/Sdk/platform-tools" ] ; then
+    export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
+fi
 ##/
 # EXAMPLE CONFIGS
 #/
@@ -84,4 +92,3 @@ eval "$(tmuxifier init -)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-

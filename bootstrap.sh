@@ -70,9 +70,8 @@ else
 fi
 
 echo "###################################"
-echo "install tmuxifier and themes"
+echo "install tmuxifier"
 git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
-cp $dir/tmuxifier_layouts/* $HOME/.tmuxifier/layouts/
 
 # install spf13-vim
 cd

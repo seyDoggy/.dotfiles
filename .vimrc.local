@@ -86,7 +86,7 @@ let g:gitgutter_realtime = 0
 " Always show statusline
 set laststatus=2
 
-" powerline symbols
+" airline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -94,6 +94,13 @@ let g:airline_right_alt_sep = ''
 let g:airline#extensions#branch#symbol = ' '
 let g:airline#extensions#readonly#symbol = ''
 let g:airline_linecolumn_prefix = ' '
+
+" airline tabline - Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" airline - Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#show_buffers = 0
 
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
@@ -193,3 +200,27 @@ let g:jsdoc_underscore_private = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" javacomplete
+" required
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+" javacomplete
+" To enable smart (trying to guess import option) inserting class imports with F4
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+
+" javacomplete
+" To enable usual (will ask for import option) inserting class imports with F5
+nmap <F5> <Plug>(JavaComplete-Imports-Add)
+imap <F5> <Plug>(JavaComplete-Imports-Add)
+
+" javacomplete
+" To add all missing imports with F6
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+
+" javacomplete
+" To remove all unused imports with F7:
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
