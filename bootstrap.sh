@@ -24,7 +24,7 @@ sudo apt upgrade
 # Install tools
 echo "###################################"
 echo "Installing tools..."
-sudo apt install vim-gnome zsh tmux curl htop dconf-cli
+sudo apt install vim-gnome zsh tmux curl htop dconf-cli gnome-terminal
 
 # Add tools to allow PPA's
 echo "###################################"
