@@ -25,6 +25,7 @@ alias v4="tmuxifier load-window v_4"
 alias h4="tmuxifier load-window h_4"
 alias h6="tmuxifier load-window h_6"
 alias ide="tmuxifier load-window javaIDE"
+alias ctags="`brew --prefix`/bin/ctags"
 
 #PATH
 # tmuxifier Path
