@@ -1,6 +1,6 @@
 # Set window root path. Default is `$session_root`.
 # Must be called before `new_window`.
-window_root "~/Projects/bank-payee-rs/"
+window_root "~/Projects/"
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
