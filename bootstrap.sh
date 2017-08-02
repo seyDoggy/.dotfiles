@@ -24,18 +24,12 @@ sudo apt upgrade
 # Install tools
 echo "###################################"
 echo "Installing tools..."
-sudo apt install vim-gnome zsh tmux curl htop dconf-cli gnome-terminal tree default-jdk
+sudo apt install vim-gnome zsh tmux curl htop dconf-cli gnome-terminal tree default-jdk ppa-purge
 
 # Add tools to allow PPA's
 echo "###################################"
 echo "Installing PPA tools..."
 sudo apt install software-properties-common python-software-properties
-
-# Add paper theme
-echo "###################################"
-echo "Adding paper theme"
-sudo add-apt-repository ppa:snwh/pulp && sudo apt update
-sudo apt install paper-icon-theme paper-gtk-theme paper-cursor-theme
 
 # create dotfiles_old in homedir
 echo "###################################"
