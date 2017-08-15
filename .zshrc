@@ -47,6 +47,14 @@ fi
 # special dir colors used with the solarized theme
 eval `dircolors $HOME/.dir_colors/dircolors`
 
+# NVM Support
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 ##/
 # EXAMPLE CONFIGS
 #/
@@ -93,6 +101,3 @@ eval `dircolors $HOME/.dir_colors/dircolors`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git node npm web-search bower)
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
