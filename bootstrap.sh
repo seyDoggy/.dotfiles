@@ -35,6 +35,10 @@ brew link --overwrite macvim
 # To set mysql password:
 #mysqladmin -u root -p
 
+# CocoaPods is a dependency manager for Xcode Projects
+echo "Installing cocoapods"
+sudo gem install cocapods
+
 # create dotfiles_old in homedir
 echo "###################################"
 echo "Creating $olddir for backup of any existing dotfiles in $HOME"
