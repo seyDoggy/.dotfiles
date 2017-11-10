@@ -41,8 +41,8 @@ sudo gem install cocapods
 
 # install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
-nvm install node
-nvm use node
+$HOME/.nvm/nvm.sh install node
+$HOME/.nvm/nvm.sh use node
 
 # create dotfiles_old in homedir
 echo "###################################"
