@@ -117,4 +117,4 @@ echo "###################################"
 echo "Installing mate-terminal-colors-solarized"
 git clone https://github.com/cledoux/mate-terminal-colors-solarized.git ~/.mate-terminal-colors-solarized
 cd ~/.mate-terminal-colors-solarized
-./install.sh
+./install.sh -s dark -p Default -y
