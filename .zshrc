@@ -44,9 +44,6 @@ if [ -d "$HOME/Android/Sdk/platform-tools" ] ; then
     export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
 fi
 
-# special dir colors used with the solarized theme
-eval `dircolors $HOME/.dir_colors/dircolors`
-
 # NVM Support
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
