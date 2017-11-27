@@ -24,7 +24,7 @@ sudo apt upgrade
 # Install tools
 echo "###################################"
 echo "Installing tools..."
-sudo apt install vim-gnome zsh tmux curl htop dconf-cli gnome-terminal tree default-jdk ppa-purge
+sudo apt install vim-gnome zsh tmux curl htop dconf-cli tree default-jdk ppa-purge
 
 # Add tools to allow PPA's
 echo "###################################"
@@ -112,9 +112,9 @@ echo "###################################"
 echo "Installing powerline fonts..."
 bash ~/.vim/bundle/fonts/install.sh
 
-# Install gnome-terminal-colors-solarized
+# Install mate-terminal-colors-solarized
 echo "###################################"
-echo "Installing gnome-terminal-colors-solarized"
-git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git ~/.gnome-terminal-colors-solarized
-cd ~/.gnome-terminal-colors-solarized
-./set_dark.sh
+echo "Installing mate-terminal-colors-solarized"
+git clone https://github.com/cledoux/mate-terminal-colors-solarized.git ~/.mate-terminal-colors-solarized
+cd ~/.mate-terminal-colors-solarized
+./install.sh
