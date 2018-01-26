@@ -5,6 +5,9 @@ export ZSH=$HOME/.oh-my-zsh
 ## Path to Eclipse
 export ECLIPSE_HOME=/Applications/STS.app/Contents/Eclipse
 
+## Path to Java
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 COMPLETION_WAITING_DOTS="true"
 plugins+=(git node npm web-search bower zsh-nvm)
 
