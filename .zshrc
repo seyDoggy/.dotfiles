@@ -2,6 +2,10 @@
 ## Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+## Java DB
+export PATH=$PATH:/usr/share/javadb/bin/
+export DERBY_HOME=/usr/share/javadb
+
 COMPLETION_WAITING_DOTS="true"
 plugins=(git node npm web-search bower)
 
