@@ -33,7 +33,7 @@ brew link --overwrite macvim
 #brew services start mysql
 
 # To set mysql password:
-#mysqladmin -u root -p
+#mysqladmin -u root password 'somepassword'
 
 # CocoaPods is a dependency manager for Xcode Projects
 echo "Installing cocoapods"
