@@ -7,6 +7,7 @@ export ECLIPSE_HOME=/Applications/STS.app/Contents/Eclipse
 
 ## Path to Java
 export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="/usr/local/bin/apache-maven-3.5.2/bin:$PATH"
 
 COMPLETION_WAITING_DOTS="true"
 plugins+=(git node npm web-search bower zsh-nvm)

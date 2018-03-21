@@ -39,6 +39,9 @@ brew link --overwrite macvim
 echo "Installing cocoapods"
 sudo gem install cocapods
 
+# CocoaPods tool for Artifactory
+gem install cocoapods-art
+
 # install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 $HOME/.nvm/nvm.sh install node
