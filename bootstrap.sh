@@ -31,6 +31,11 @@ echo "###################################"
 echo "Installing PPA tools..."
 sudo apt install software-properties-common python-software-properties
 
+# install nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+$HOME/.nvm/nvm.sh install node
+$HOME/.nvm/nvm.sh use node
+
 # create dotfiles_old in homedir
 echo "###################################"
 echo "Creating $olddir for backup of any existing dotfiles in $HOME"
