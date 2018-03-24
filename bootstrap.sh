@@ -36,6 +36,21 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | b
 $HOME/.nvm/nvm.sh install node
 $HOME/.nvm/nvm.sh use node
 
+# Install mongodb
+#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+#echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+#sudo apt update
+#sudo apt install -y mongodb-org
+
+# Start mongod service
+#sudo service mongod start
+
+# Stop mongod service
+#sudo service mongod stop
+
+# Use mongodb
+#mongo --host 127.0.0.1:27017
+
 # create dotfiles_old in homedir
 echo "###################################"
 echo "Creating $olddir for backup of any existing dotfiles in $HOME"
