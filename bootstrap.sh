@@ -51,6 +51,16 @@ $HOME/.nvm/nvm.sh use node
 # Use mongodb
 #mongo --host 127.0.0.1:27017
 
+# Install Postgreql
+#echo "deb http://apt.postgresql.org/pub/repos/apt/ zesty-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+#deb http://apt.postgresql.org/pub/repos/apt/ zesty-pgdg main
+#wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+#sudo apt update
+#sudo apt install -y postgresql-9.6
+
+# Create postgres user, role, etc...
+#sudo -u postgres createuser --superuser $USER; sudo -u postgres createdb $USER
+
 # create dotfiles_old in homedir
 echo "###################################"
 echo "Creating $olddir for backup of any existing dotfiles in $HOME"
