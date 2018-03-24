@@ -2,10 +2,6 @@
 ## Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-## Java DB
-export PATH=$PATH:/usr/share/javadb/bin/
-export DERBY_HOME=/usr/share/javadb
-
 COMPLETION_WAITING_DOTS="true"
 plugins=(git node npm web-search bower)
 
@@ -30,11 +26,15 @@ alias ide="tmuxifier load-window javaIDE"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
-#PATH
-## tmuxifier Path
-export PATH="$HOME/.tmuxifier/bin:$PATH"
 # tmuxifier layout Path
 export TMUXIFIER_LAYOUT_PATH="$HOME/.dotfiles/tmuxifier_layouts"
+
+# Java DB
+export DERBY_HOME=/usr/lib/jvm/java-8-oracle/db
+
+#PATH
+## tmuxifier Path && Derby Path
+export PATH="$HOME/.tmuxifier/bin:$DERBY_HOME/bin:$PATH"
 
 # EDITOR
 export VISUAL=vim
