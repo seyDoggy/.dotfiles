@@ -9,9 +9,7 @@ dir="$HOME/.dotfiles"
 # old dotfiles backup directory
 olddir="$HOME/.dotfiles_old"
 # list of files/folders to symlink in homedir
-files=".vimrc.before.local
-.vimrc.bundles.local
-.vimrc.local
+files=".vimrc
 .zshrc
 .tmux.conf"
 
@@ -24,7 +22,7 @@ sudo apt upgrade
 # Install tools
 echo "###################################"
 echo "Installing tools..."
-sudo apt install vim-gnome zsh tmux curl htop dconf-cli gnome-terminal tree default-jdk ppa-purge
+sudo apt install vim-gnome zsh tmux curl htop dconf-cli gnome-terminal tree default-jdk ppa-purge fonts-powerline
 
 # Add tools to allow PPA's
 echo "###################################"
@@ -67,14 +65,6 @@ echo "###################################"
 echo "install tmuxifier"
 git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
 
-# install spf13-vim
-cd
-if [ ! -d "$HOME/.spf13-vim-3" ]; then
-    echo "###################################"
-    echo "Installing spf13-vim"
-    curl http://j.mp/spf13-vim3 -L -o - | sh
-fi
-
 # create symlinks 
 for file in $files; do
     echo "###################################"
@@ -102,15 +92,8 @@ for file in $files; do
     fi
 done
 
-# install bundles
-cd $HOME/.spf13-vim-3
-git pull
-vim +BundleInstall! +BundleClean +qa!
-
-# Install fonts
-echo "###################################"
-echo "Installing powerline fonts..."
-bash ~/.vim/bundle/fonts/install.sh
+# install plugins with vim-plug
+vim +PlugInstall
 
 # Install gnome-terminal-colors-solarized
 echo "###################################"
