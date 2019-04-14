@@ -25,6 +25,7 @@ alias h6="tmuxifier load-window h_6"
 alias ide="tmuxifier load-window javaIDE"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias touchpadfix='modprobe i2c-i801' # from https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1722478/comments/66
 
 #PATH
 ## tmuxifier Path
