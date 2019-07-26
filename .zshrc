@@ -44,6 +44,9 @@ export EDITOR="$VISUAL"
 # init tmuxifier
 eval "$(tmuxifier init -)"
 
+# GRAPHVIZ DOT for rendering plantUML diagrams in VS Code
+export GRAPHVIZ_DOT=/usr/local/bin/dot
+
 ##/
 # EXAMPLE CONFIGS
 #/
