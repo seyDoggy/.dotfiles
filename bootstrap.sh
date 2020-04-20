@@ -36,16 +36,19 @@ brew link --overwrite macvim
 #mysqladmin -u root password 'somepassword'
 
 # CocoaPods is a dependency manager for Xcode Projects
-echo "Installing cocoapods"
-sudo gem install cocapods
+#echo "Installing cocoapods"
+#sudo gem install cocapods
 
 # CocoaPods tool for Artifactory
-gem install cocoapods-art
+#gem install cocoapods-art
 
 # install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 $HOME/.nvm/nvm.sh install node
 $HOME/.nvm/nvm.sh use node
+
+# install zsh-nvm
+git clone https://github.com/lukechilds/zsh-nvm $HOME/.oh-my-zsh/custom/plugins/zsh-nvm
 
 # create dotfiles_old in homedir
 echo "###################################"
