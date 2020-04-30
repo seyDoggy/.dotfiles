@@ -5,10 +5,6 @@ export ZSH=$HOME/.oh-my-zsh
 ## Path to Eclipse
 export ECLIPSE_HOME=/Applications/STS.app/Contents/Eclipse
 
-## Path to Java
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH="/usr/local/bin/apache-maven-3.5.2/bin:$PATH"
-
 COMPLETION_WAITING_DOTS="true"
 plugins+=(git node npm web-search bower zsh-nvm)
 
@@ -96,8 +92,3 @@ export GRAPHVIZ_DOT=/usr/local/bin/dot
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
